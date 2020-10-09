@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authService: AuthService) { }
 
-    async ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/game';
+  async ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/login';
 
     this.form = this.fb.group({
       username: ['', Validators.email],
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     });
 
     //if (await this.authService.checkAuthenticated()) {
-      await this.router.navigate([this.returnUrl]);
+    await this.router.navigate([this.returnUrl]);
     //}
   }
 

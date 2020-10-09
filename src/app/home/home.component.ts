@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../data-services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  panelOpenState = false;
-  constructor() { }
+  title = '药品说明书维护与管理';
+  isAuthenticated: boolean;
 
-  ngOnInit(): void {
+  constructor(public authService: AuthService) {
+    this.authService.isAuthenticated.subscribe(
+      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
+    );
   }
 
+  async ngOnInit() {
+    //this.isAuthenticated = await this.authService.checkAuthenticated();
+    this.isAuthenticated = true;
+  }
+
+  logout() {
+    this.authService.logout('/');
+  }
 }

@@ -29,7 +29,7 @@ import { MatTreeModule } from '@angular/material/tree';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const materialModules = [
   CdkTreeModule,
@@ -61,8 +61,8 @@ const materialModules = [
   PortalModule,
   FlexLayoutModule,
   FormsModule,
-  ReactiveFormsModule,
-  BrowserAnimationsModule
+  ReactiveFormsModule
+  //,BrowserAnimationsModule
 ];
 
 @NgModule({

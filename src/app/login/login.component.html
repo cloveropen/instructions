@@ -1,23 +1,24 @@
 <mat-card>
   <mat-card-content>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h2>Log In</h2>
+      <h2>登录系统</h2>
       <mat-error *ngIf="loginInvalid">
-        The username and password were not recognised
+        用户名或密码输入错误,请重新输入
       </mat-error>
       <mat-form-field class="full-width-input">
-        <input matInput placeholder="Email" formControlName="username" required>
+        <input matInput placeholder="用户名" formControlName="username" required>
         <mat-error>
-          Please provide a valid email address
+          请输入正确的用户名,长度不能少于4位
         </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width-input">
-        <input matInput type="password" placeholder="Password" formControlName="password" required>
+        <input matInput type="password" placeholder="密码" formControlName="password" required>
         <mat-error>
-          Please provide a valid password
+          请输入正确的密码
         </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary">Login</button>
+      <button mat-raised-button color="primary">登录</button>
     </form>
   </mat-card-content>
 </mat-card>
+<h1>works login</h1>

@@ -9,6 +9,13 @@ export class AuthService {
   public isAuthenticated = new BehaviorSubject<boolean>(false);
   constructor(private router: Router) { }
 
+  async checkAuthenticated() {
+    //const authenticated = await this.authClient.session.exists();
+    const authenticated = false;
+    this.isAuthenticated.next(authenticated);
+    return authenticated;
+  }
+
   async login(username: string, password: string) {
     //const transaction = await this.authClient.signIn({username, password});
 

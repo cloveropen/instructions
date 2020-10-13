@@ -1,44 +1,13 @@
-<mat-toolbar color="primary" class="expanded-toolbar">
-  <span>
-      <button mat-button routerLink="/">{{title}}</button>
-      <button mat-button routerLink="/">
-          <mat-icon>home</mat-icon>
-      </button>
-  </span>
-  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-      <button mat-button routerLink="/login" *ngIf="!isAuthenticated">
-          <mat-icon>power_settings_new</mat-icon>
-          登录
-      </button>
-      <button mat-button *ngIf="isAuthenticated" (click)="logout()">
-          <mat-icon>exit_to_app</mat-icon>
-          退出
-      </button>
-      <button mat-button routerLink="/maintain">
-          <mat-icon>gamepad</mat-icon>
-          维护
-      </button>
-  </div>
-  <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-      <mat-icon>menu</mat-icon>
-  </button>
-</mat-toolbar>
-<mat-menu x-position="before" #menu="matMenu">
-  <button mat-menu-item routerLink="/">
-      <mat-icon>home</mat-icon>
-      主页
-  </button>
-  <button mat-menu-item routerLink="/maintain">
-      <mat-icon>gamepad</mat-icon>
-      维护
-  </button>
-  <button mat-menu-item routerLink="/login" *ngIf="!isAuthenticated">
-      <mat-icon>power_settings_new</mat-icon>
-      登录
-  </button>
-  <button mat-menu-item *ngIf="isAuthenticated" (click)="logout()">
-      <mat-icon>exit_to_app</mat-icon>
-      退出
-  </button>
-</mat-menu>
+<a [routerLink]="['/maintain']" routerLinkActive="router-link-active">Maintain</a>
+<br />
+<a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+<br />
+<a [routerLink]="['/utils']" routerLinkActive="router-link-active">Utils</a>
+<br />
+<a [routerLink]="['/home']" routerLinkActive="active">Home</a>
 
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="药品名称">药品名称</mat-button-toggle>
+    <mat-button-toggle value="适应症">适应症</mat-button-toggle>
+    <mat-button-toggle value="用药禁忌">用药禁忌</mat-button-toggle>
+</mat-button-toggle-group>

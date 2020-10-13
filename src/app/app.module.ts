@@ -8,10 +8,14 @@ import { HomeModule } from './home/home.module';
 //import { UtilsModule } from './utils/utils.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import { InstrcutionsHeaderComponent } from './instrcutions-header/instrcutions-header.component';
+import { InstrcutionsFooterComponent } from './instrcutions-footer/instrcutions-footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InstrcutionsHeaderComponent,
+    InstrcutionsFooterComponent
   ],
   imports: [
     BrowserModule,
